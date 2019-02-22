@@ -1,0 +1,113 @@
+Problemática:
+
+Se desea generar una solución informática que permita determinar el sueldo a pagar mensual de un docente de un instituto educativo, en función de las horas trabajadas en el mes y el costo por hora. Para obtener el valor a pagar se define lo siguiente: si el docente ha trabajado 40 horas o más, se le debe agregar a su sueldo una bonificación de $150; para el resto de docente no se debe agregar ningún valor adicional 
+
+
+
+Algoritmo CALCULAR LA PENSIÓN DE VARIOS ESTUDIANTE
+
+  Clase Docente 
+    1.  Declarar
+        nombres: Cadena
+        apellidos: Cadena
+        numeroHoras: Real
+        costoHora: Real
+        sueldo: Real
+    
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombres(nom: Cadena)
+        a.  nombres = nom
+        b.  Fin Método establecerNombres
+  
+    3.  Método establecerApellido(ape: Cadena)
+        a.  apellidos= ape
+        b.  Fin Método establecerApellido
+    
+    4.  Método establecerNumeroHoras(horas: Real)
+        a.  numeroHoras = horas
+        b.  Fin Método establecerNumeroHoras
+
+    5.  Método establecerCostoHora(costo: Real)
+        a.  costoHora = costo
+        b.  Fin Método establecerCostoHora 
+    
+    6.  Método calcularSueldo()
+        a.  if numeroHoras >= 40 then
+              sueldo = (numeroHoras * costoHora) + 150 
+        b.  else
+              sueldo = numeroHoras * costoHora
+        c.  endif
+        d.  Fin Método calcularSueldo
+
+    //  Métodos obtener para los datos o atributos de la clase
+    7.  Método obtenerNombres() : Cadena
+        a.  return nombres
+        b.  Fin Método obtenerNombres
+ 
+    8.  Método obtenerApellido() : Cadena
+        a.  return apellidos
+        b.  Fin Método obtenerApellido
+
+    9. Método obtenerNumeroHoras() : Entero
+        a.  return numeroHoras
+        b.  Fin Método obtenerNumeroHoras
+
+    10.  Método obtenerCostoHora()
+        a.  return costoHora  
+        b.  Fin Método obtenerCostoHora
+
+    11. Método obtenerSueldo() : Real
+        a.  return sueldo
+        b.  Fin Método obtenerSueldo 
+     
+  Fin Clase Docente 
+
+  Clase EjecutaDocente
+    1.  Método principal()
+        a.  Declarar Variables
+            nombresDoc: Cadena 
+            apellidosDoc: Cadena 
+            costoHr: Real
+            numeroHr: Entero
+            bandera: Carácter
+            
+        b.  bandera = "S"
+            // Se inicia el ciclo repetitivo
+            // Se ingresa al ciclo repetitivo, siempre que bandera sea igual
+            // al carácter "S"
+            while bandera == "S" then
+              1.  // Declarar e iniciar el objeto Docente 
+                  // para todas las ocasiones que se recorra el ciclo
+                  Docente docente = new Docente()
+
+              2.  Solicitar nombre de estudiante,
+                            apellido de estudiante
+                            número de Horas 
+                            valor de cada Hora 
+              
+              3.  Leer  nombresDoc,
+                        apellidosDoc,
+                        costoHr,
+                        numeroHr 
+
+              4.  // se hace uso de los métodos establecer para asignar valores
+                  // a los datos (atributos) del objeto
+                  Establecer  docente.establecerNombres(nombresDoc),
+                              docente.establecerApellido(apellidosDoc),
+                              docente.establecerCostoHora(costoHr),
+                              docente.establecerNumeroHoras(numeroHr)
+
+              5.  Calcular  estudiante.calcularSueldo()
+
+              6.  Imprimir  "Los datos del docente ingresados son:",
+                            docente.obtenerNombres(),
+                            docente.obtenerApellido(),
+                            "El sueldo del docentes es:",
+                            docente.obtenerSueldo()
+              7.  Imprimir "Desea continuar ingresando docentes S/N"
+              8.  Leer bandera 
+        c.  endwhile
+        d.  Fin Método principal
+    
+  Fin Clase EjecutaDocente
+Fin 

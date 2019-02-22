@@ -1,0 +1,125 @@
+Problemática:
+
+Se necesita presentar una solución que permita encontrar el promedio de calificacionnes
+de cada alumno de un paralelo. Cada alumno tiene como atributos nombre, califiación 1, 
+calificación 2, calificación 3. La solución deberá permitir el ingreso máximo de alumnos
+para procesar
+
+Algoritmo CALCULAR EL PROMEDIO DE CALIFICACIONES DE UN CONJUNTO DE ALUMNOS 
+
+  Clase Alumno 
+    1.  Declarar
+        nombres: Cadena
+        calificacion1: Real 
+        calificacion2: Real 
+        calificacion3: Real 
+        promedio: Real
+    
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombres(nom: Cadena)
+        a.  nombres = nom
+        b.  Fin Método establecerNombres
+  
+    3.  Método establecerCalificacion1(c1: Real)
+        a.  calificacion1 = c1
+        b.  Fin Método establecerCalificacion1
+    
+    4.  Método establecerCalificacion2(c2: Real)
+        a.  calificacion2 = c2
+        b.  Fin Método establecerCalificacion2
+
+    5.  Método establecerCalificacion3(c2: Real)
+        a.  calificacion3 = c3
+        b.  Fin Método establecerCalificacion3
+    6.  Método establecerNumeroHoras(horas: Real)
+        a.  numeroHoras = horas
+        b.  Fin Método establecerNumeroHoras
+
+    7.  Método calcularPromedio()
+        a.  Declarar variable locales
+            suma = Real
+        
+        b.  Proceso de suma de las calificaciones
+            suma = calificacion1 + calificacion2 +
+                  calificacion3
+        c.  Proceso para encontrar el promedio
+            promedio = suma/3 
+        d.  Fin Método calcularPromedio
+
+    //  Métodos obtener para los datos o atributos de la clase
+    8.  Método obtenerNombres() : Cadena
+        a.  return nombres
+        b.  Fin Método obtenerNombres
+ 
+    9.  Método obtenerCalificacion1() : Real 
+        a.  return calificacion1 
+        b.  Fin Método obtenerCalificacion1
+
+    10.  Método obtenerCalificacion2() : Real 
+        a.  return calificacion2 
+        b.  Fin Método obtenerCalificacion2
+
+    11.  Método obtenerCalificacion3() : Real 
+        a.  return calificacion3 
+        b.  Fin Método obtenerCalificacion3
+    
+    12. Método obtenerPromedio() : Real
+        a.  return promedio
+        b.  Fin Método obtenerPromedio
+     
+  Fin Clase Alumno 
+
+  Clase EjecutaAlumno
+    1.  Método principal()
+        a.  Declarar Variables
+            nombresEst: Cadena 
+            calf1: Real 
+            calf2: Real 
+            calf3: Real 
+            numero_alumnos: Entero
+        
+        b.  Solicitar numero_estudiante
+        c.  Leer numero_alumnos
+            
+        d.  // inicio del ciclo repetitivo
+            // que itera hasta el valor ingresado en 
+            // numero_alumnos
+            for j=1; j<numero_alumnos; j++
+
+              1.  // Declarar e iniciar el objeto Alumno 
+                  // para todas las ocasiones que se recorra el ciclo
+                  Alumno alu = new Alumno()
+
+              2.  Solicitar nombres de estudiante,
+                            calificación 1, 
+                            calificación 2, 
+                            calificación 3 
+
+              3.  Leer  nombresEst,
+                        calf1,
+                        calf2,
+                        calf3
+
+              4.  // se hace uso de los métodos establecer para asignar valores
+                  // a los datos (atributos) del objeto
+                  Establecer  alumno.establecerNombres(nombresEst),
+                              alumno.establecerCalificacion1(calf1),
+                              alumno.establecerCalificacion2(calf2),
+                              alumno.establecerCalificacion3(calf3)
+
+              5.  // Se hace uso del método que permite calcular el promedio de
+                  // calificaciones de un alumno, se llama al método llamado calcularPromedio
+              6.  Calcular  alumno.calcularPromedio()
+
+              7.  Imprimir  "Los datos del alumno ingresados son:",
+                            alumno.obtenerNombres(),
+                            alumno.obtenerCalificacion1(),
+                            alumno.obtenerCalificacion2(),
+                            alumno.obtenerCalificacion3(),
+                            "Su promedio de calificacione es:",
+                            alumno.obtenerPromedio()
+        c.  endfor
+        d.  Fin Método principal
+    
+  Fin Clase EjecutaEstudiante  
+Fin 
