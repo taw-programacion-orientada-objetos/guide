@@ -1,0 +1,107 @@
+
+Algoritmo PROMEDIO DE NOTAS DE UN PARALELO 
+
+  Clase Paralelo 
+    1.  Declarar
+        // se declaran datos o atributos
+        nombreParalelo: Cadena
+        materia: Cadena
+        notas: <<Arreglo>>[20] Real
+        promedio: Real
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombreParalelo(nom: Cadena)
+        a.  nombreParalelo = nom
+        b.  Fin Método establecerNombreParalelo
+  
+    3.  Método establecerMateria(mat: Cadena)
+        a.  materia = mat
+        b.  Fin Método establecerMateria
+    
+    4.  Método establecerNotas(arreglo_notas []: <<Arreglo>> Real)
+        a.  notas = arreglo_notas
+        b.  Fin Método establecerNotas
+
+    5.  Método calcularPromedio()
+        a.  // Declarar variables locales necesarias
+            j: Entero
+            suma: Real
+            suma = 0 // se inicializa la variable suma con un valor de 0
+  
+        b.  //inicio del ciclo repetitivo que permita recorrer el arreglo de 
+            // notas, para obtener como resultado la suma total de notas
+            for j=0; j<20; j++
+                suma = suma + nota[j] 
+        c.  endfor
+        d.  // para obtener el promedio se realiza la división entre la suma
+            // de valores obtenido en ciclo repetitivo anterior y el tamaño
+            // del arreglo 
+            promedio = suma/20 // Importante, 20 es el tamaño del arreglo
+
+        e.  Fin Método calcularPromedio
+    
+    //  Métodos obtener para los datos o atributos de la clase
+    6.  Método obtenerNombreParalelo() : Cadena
+        a.  return nombreParalelo
+        b.  Fin Método obtenernombreParalelo
+ 
+    7.  Método obtenerMateria() : Cadena
+        a.  return materia 
+        b.  Fin Método obtenerMateria
+
+    8. Método obtenerNotas() : <<Arreglo>> [] Real 
+        a.  return notas 
+        b.  Fin Método obtenerPromedio
+    
+    9. Método obtenerPromedio() : Real 
+        a.  return promedio 
+        b.  Fin Método obtenerPromedio
+
+  Fin Clase Paralelo 
+  
+
+  Clase EjecutaParalelo
+    1.  Método principal()
+        // Se declaran variables
+        a.  Declarar Variables
+            nombrePar: Cadena
+            nombreMat: Cadena
+            lista_notas: <<Arreglo>>[20] Real
+            i: Entero 
+        
+        b.  // Solicitar el ingreso de valores para nombre de paralelo
+            // y nombre de materia
+            Solicitar nombrePar, nombreMat
+            Leer nombrePar, nombreMat
+        
+        c.  // Incio ciclo repetitivo para llenar las notas 
+            // ingresadas por el teclado
+            // Se usa un ciclo repetitivo for
+            for i = 0; i<20; i++
+              // Solicitar el ingreso del valor de la nota y asignar
+              // a la posición del arreglo indicada por el valor
+              // que tenga i
+              1. Solicitar lista_notas[i]
+              2. Leer lista_notas[i]
+        d.  endfor
+        
+        e.  // Declarar e iniciar un objeto tipo Paralelo
+            Paralelo paralelo = new Paralelo()
+         
+        f.  // se hace uso de los métodos establecer para asignar valores
+            // a los datos (atributos) del objeto paralelo
+            Establecer:  
+              paralelo.establecerNombreParalelo(nombrePar),
+              paralelo.establecerMateria(nombrePar),
+              paralelo.establecerNotas(lista_notas),
+        
+        g.  // Se hace uso del método que permite calcular el promedio de notas
+            // Se llama al método del objeto paralelo, llamado calcularPromedio
+            Calcular: paralelo.calcularPromedio() 
+        h.  Imprimir "Los datos del paralelo son:",
+                    "Nombre Paralelo: ", paralelo.obtenerNombreParalelo(),
+                    "Materia: ", paralelo.obtenerMateria(),
+                    "Promedio de Notas es ", paralelo.obtenerPromedio(),
+    Fin Método principal
+  Fin Clase EjecutaParalelo  
+Fin 

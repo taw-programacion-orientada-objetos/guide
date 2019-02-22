@@ -1,0 +1,83 @@
+
+Algoritmo MANEJO DE ARREGLOS CON DATOS PRIMITIVOS
+
+  Clase Paralelo 
+    1.  Declarar
+        // se declaran datos o atributos con visibilidad protegido
+        nombre: Cadena
+        listaNombres: <<Arreglo>>[20] Cadena 
+        listaEdades: <<Arreglo>>[20] Real
+
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombre(nom: Cadena)
+        a.  nombre= nom
+        b.  Fin Método establecerNombre
+  
+    3.  Método establecerListaNombres(arregloNombres []: <<Arreglo>> Cadena)
+        a.  listaNombres = arregloNombres
+        b.  Fin Método establecerListaNombres
+
+    4.  Método establecerListaEdades(arregloEdades []: <<Arreglo>> Entero)
+        a.  listaEdades = arregloEdades
+        b.  Fin Método establecerListaEdades
+    
+    //  Métodos obtener para los datos o atributos de la clase
+    5.  Método obtenerNombreParalelo() : Cadena
+        a.  return nombreParalelo
+        b.  Fin Método obtenernombreParalelo
+ 
+    6.  Método obtenerListaNombres() : <<Arreglo>> [] Cadena 
+        a.  return listaNombres 
+        b.  Fin Método obtenerListaNombres
+    
+    7.  Método obtenerListaEdades() : <<Arreglo>> [] Real 
+        a.  return listaEdades 
+        b.  Fin Método obtenerListaEdades
+
+  Fin Clase Paralelo 
+  
+
+  Clase EjecutaParalelo
+    1.  Método principal()
+        // Se declaran variables
+        a.  Declarar Variables
+            nombrePar: Cadena
+            nombreMat: Cadena
+            lista_notas: <<Arreglo>>[20] Real
+            i: Entero 
+        
+        b.  // Solicitar el ingreso de valores para nombre de paralelo
+            // y nombre de materia
+            Solicitar nombrePar, nombreMat
+            Leer nombrePar, nombreMat
+        
+        c.  // Incio ciclo repetitivo para llenar las notas 
+            // ingresadas por el teclado
+            // Se usa un ciclo repetitivo for
+            for i = 0; i<20; i++
+              // Solicitar el ingreso del valor de la nota y asignar
+              // a la posición del arreglo indicada por el valor
+              // que tenga i
+              1. Solicitar lista_notas[i]
+              2. Leer lista_notas[i]
+        d.  endfor
+        
+        e.  // Declarar e iniciar un objeto tipo Paralelo
+            Paralelo paralelo = new Paralelo()
+         
+        f.  // se hace uso de los métodos establecer para asignar valores
+            // a los datos (atributos) del objeto paralelo
+            Establecer:  
+              paralelo.establecerNombreParalelo(nombrePar),
+              paralelo.establecerMateria(nombrePar),
+              paralelo.establecerNotas(lista_notas),
+        
+        
+        g.  Imprimir "Los datos del paralelo son:",
+                    "Nombre Paralelo: ", paralelo.obtenerNombreParalelo(),
+                    "Materia: ", paralelo.obtenerMateria(),
+
+    Fin Método principal
+  Fin Clase EjecutaParalelo  
+Fin 

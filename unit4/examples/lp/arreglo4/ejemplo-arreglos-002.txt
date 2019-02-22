@@ -1,0 +1,149 @@
+
+Algoritmo PROMEDIO DE EDADES DE LOS ESTUDIANTES DE UN PARALELO 
+  
+  Clase Estudiante 
+    1.  Declarar
+        nombresEstudiante: Cadena
+        edad: Entero 
+    
+    3.  Método establecerNombresEstudiante(nom: Cadena)
+        a.  nombresEstudiante = nom
+        b.  Fin Método establecerNombresEstudiante 
+    
+    4.  Método establecerEdadEstudiante(ed: Entero)
+        a.  edad = ed
+        b.  Fin Método establecerEdadEstudiante
+    
+    5.  Método obtenernombresEstudiante() : Cadena
+        a.  return nombresEstudiante  
+        b.  Fin Método obtenernombresEstudiante 
+ 
+    6.  Método obtenerEdadEstudiante() : Entero
+        a.  return edad 
+        b.  Fin Método obtenerEdadEstudiante
+
+  Fin Clase Estudiante 
+
+  Clase Paralelo 
+    1.  Declarar
+        // se declaran datos o atributos con visibilidad protegido
+        nombreParalelo: Cadena
+        estudiantes: <<Arreglo>>[10] Estudiante
+        promedio_edades: Real
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombreParalelo(nom: Cadena)
+        a.  nombreParalelo = nom
+        b.  Fin Método establecerNombreParalelo
+  
+    3.  Método establecerEstudiantes(arreglo_estudiante []: <<Arreglo>> Real)
+        a.  estudiantes = arreglo_estudiante
+        b.  Fin Método establecerEstudiantes
+    
+    5.  Método calcularPromedioEdades()
+        a.  // Declarar variables locales necesarias
+            j: Entero
+            suma: Real
+            suma = 0 // se inicializa la variable suma con un valor de 0
+  
+        b.  //inicio del ciclo repetitivo que permita recorrer el arreglo de 
+            // notas, para obtener como resultado la suma total de notas
+            for j=0; j<20; j++
+                // Se declara una variable llamada e, de tipo Estudiante.
+                // A la variable e se le asigna el valor del arreglo en la
+                // posición i.
+                // Importante señalar que estudiantes[i] representa un
+                // objeto de tipo Estudiante
+                Estudiante e = estudiantes[i] 
+
+                // Se necesita acceder a la edad del estudiante,
+                // a través del objeto e se accede a la edad del estudiante
+                // mediante el método obtenerEdadEstudiante y ese valor es 
+                // sumado a la variable suma
+                
+                suma = suma + e.obtenerEdadEstudiante()
+        c.  endfor
+        d.  // para obtener el promedio se realiza la división entre la suma
+            // de valores obtenido en ciclo repetitivo anterior y el tamaño
+            // del arreglo 
+            promedio_edades = suma/10 // Importante, 20 es el tamaño del arreglo
+
+        e.  Fin Método calcularPromedio
+    
+    //  Métodos obtener para los datos o atributos de la clase
+    6.  Método obtenerNombreParalelo() : Cadena
+        a.  return nombreParalelo
+        b.  Fin Método obtenernombreParalelo
+ 
+    7. Método obtenerEstudiantes() : <<Arreglo>> [] Estudiante 
+        a.  return estudiantes 
+        b.  Fin Método obtenerEstudiantes
+    
+    9. Método obtenerPromedioEdades() : Real 
+        a.  return promedio_edades 
+        b.  Fin Método obtenerPromedio
+
+  Fin Clase Paralelo 
+  
+  
+  Clase EjecutaParalelo
+    1.  Método principal()
+        // Se declaran variables
+        a.  Declarar Variables
+            nombrePar: Cadena
+            nombreEst: Cadena
+            edad: Entero
+            lista_estudiantes: <<Arreglo>>[10] Estudiante 
+            i: Entero 
+        
+        b.  // Solicitar el ingreso de valores para nombre de paralelo
+            Solicitar nombrePar
+            Leer nombrePar
+        
+        c.  // Incio ciclo repetitivo para agregar objetos de tipo Estudiante 
+            // al arreglo lista_estudiantes
+            // Se usa un ciclo repetitivo for
+            for i = 0; i<10; i++
+              1. // Declarar e iniciar un objeto tipo Estudiante
+                 Estudiante e = new Estudiante()
+
+              2. // Solicitar el ingreso del nombre y la edad para luego
+                 // usarlos en la asignación de valores del objeto estudiante 
+                 // que tenga i
+                 Solicitar nombreEst, edad
+
+              3. Leer nombreEst, edad
+              
+              4. // se hace uso de los métodos establecer para asignar valores
+                 // a los datos (atributos) del objeto paralelo
+                 Establecer:
+                 e.establecerNombresEstudiante(nombreEst)
+                 e.establecerEdadEstudiante(edad)
+
+              5. // Agregar el objeto estudiante al arreglo lista_estudiantes, 
+                 // en la posición que determina el valor de la variable i
+                 lista_estudiantes[i] = e
+
+        d.  endfor
+        
+        e.  // Declarar e iniciar un objeto tipo Paralelo
+            Paralelo paralelo = new Paralelo()
+         
+        f.  // se hace uso de los métodos establecer para asignar valores
+            // a los datos (atributos) del objeto paralelo
+            Establecer:  
+              paralelo.establecerNombreParalelo(nombrePar),
+              paralelo.establecerEstudiantes(lista_estudiantes),
+        
+        g.  // Se hace uso del método que permite calcular el promedio de las
+            // edades de los estudiantes del listado de estudiante.
+            // Se llama al método del objeto paralelo, llamado
+            // calcularPromedioEdades
+            Calcular: paralelo.calcularPromedioEdades() 
+        h.  Imprimir "Los datos del paralelo son:",
+                    "Nombre Paralelo: ", paralelo.obtenerNombreParalelo(),
+                    "Promedio de Edades de estudiante es ", 
+                    paralelo.obtenerPromedioEdades()
+    Fin Método principal
+  Fin Clase EjecutaParalelo  
+Fin 

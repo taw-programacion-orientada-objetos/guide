@@ -1,0 +1,119 @@
+
+Algoritmo MANEJO DE OBJETOS CON ARREGLOS
+
+  Clase Futbolista
+    1.  Declarar
+        // se declaran datos o atributos 
+        nombre: Cadena
+        edad: Entero 
+        posicion: Cadena
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombre(nom: Cadena)
+        a.  nombre= nom
+        b.  Fin Método establecerNombre
+  
+    2.  Método establecerEdad(ed: Entero)
+        a.  edad = ed
+        b.  Fin Método establecerEdad
+
+    3.  Método establecerPosicion(pos: Cadena)
+        a.  posicion = pos 
+        b.  Fin Método establecerPosicion
+
+    //  Métodos obtener para los datos o atributos de la clase
+    5.  Método obtenerNombre() : Cadena
+        a.  return nombre
+        b.  Fin Método obtenerNombre
+
+    5.  Método obtenerEdad() : Entero 
+        a.  return edad
+        b.  Fin Método obtenerEdad
+ 
+    5.  Método obtenerPosicion() : Cadena
+        a.  return posicion
+        b.  Fin Método obtenerPosicion
+
+  Fin Clase Futbolista 
+
+  Clase Equipo 
+    1.  Declarar
+        // se declaran datos o atributos
+        nombreEquipo: Cadena
+        siglasEquipo: Cadena
+        listaFutbolistas: <<Arreglo>>[20] Futbolista 
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombreEquipo(nom: Cadena)
+        a.  nombre = nom
+        b.  Fin Método establecerNombreEquipo
+  
+    3.  Método establecerSiglasEquipo(siglas: Cadena)
+        a.  siglasEquipo = siglas
+        b.  Fin Método establecerSiglasEquipo
+    
+    4.  Método establecerListaFutbolista(lista_fut[]: <<Arreglo>> Futbolista)
+        a.  listaFutbolistas = lista_fut 
+        b.  Fin Método establecerListaFutbolista
+
+    //  Métodos obtener para los datos o atributos de la clase
+    5.  Método obtenerNombreEquipo() : Cadena
+        a.  return nombreEquipo
+        b.  Fin Método obtenerNombreEquipo
+
+    6.  Método obtenerSiglasEquipo() : Cadena
+        a.  return siglasEquipo
+        b.  Fin Método obtenerSiglasEquipo
+ 
+    7.  Método obtenerListaFutbolistas() : <<Arreglo>> [] Futbolista 
+        a.  return listaFutbolistas
+        b.  Fin Método obtenerListaFutbolistas
+    
+  Fin Clase Paralelo 
+  
+
+  Clase EjecutaParalelo
+    1.  Método principal()
+        // Se declaran variables
+        a.  Declarar Variables
+            nombrePar: Cadena
+            nombreMat: Cadena
+            lista_notas: <<Arreglo>>[20] Real
+            i: Entero 
+        
+        b.  // Solicitar el ingreso de valores para nombre de paralelo
+            // y nombre de materia
+            Solicitar nombrePar, nombreMat
+            Leer nombrePar, nombreMat
+        
+        c.  // Incio ciclo repetitivo para llenar las notas 
+            // ingresadas por el teclado
+            // Se usa un ciclo repetitivo for
+            for i = 0; i<20; i++
+              // Solicitar el ingreso del valor de la nota y asignar
+              // a la posición del arreglo indicada por el valor
+              // que tenga i
+              1. Solicitar lista_notas[i]
+              2. Leer lista_notas[i]
+        d.  endfor
+        
+        e.  // Declarar e iniciar un objeto tipo Paralelo
+            Paralelo paralelo = new Paralelo()
+         
+        f.  // se hace uso de los métodos establecer para asignar valores
+            // a los datos (atributos) del objeto paralelo
+            Establecer:  
+              paralelo.establecerNombreParalelo(nombrePar),
+              paralelo.establecerMateria(nombrePar),
+              paralelo.establecerNotas(lista_notas),
+        
+        g.  // Se hace uso del método que permite calcular el promedio de notas
+            // Se llama al método del objeto paralelo, llamado calcularPromedio
+            Calcular: paralelo.calcularPromedio() 
+        h.  Imprimir "Los datos del paralelo son:",
+                    "Nombre Paralelo: ", paralelo.obtenerNombreParalelo(),
+                    "Materia: ", paralelo.obtenerMateria(),
+                    "Promedio de Notas es ", paralelo.obtenerPromedio(),
+    Fin Método principal
+  Fin Clase EjecutaParalelo  
+Fin 
