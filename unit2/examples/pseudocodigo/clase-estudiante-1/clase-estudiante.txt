@@ -1,0 +1,98 @@
+Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE 
+
+  Clase Estudiante 
+    1.  Declarar
+        nombresEstudiante: Cadena
+        apellidosEstudiante: Cadena
+        identificacionEstudiante: Cadena
+        valorCredito: Real
+        numeroCreditos: Entero
+        costoMatricula: Real
+    
+    2.  Método establecerNombresEstudiante(nom: Cadena)
+        a.  nombresEstudiante = nom
+        b.  Fin Método establecerNombresEstudiante 
+  
+    3.  Método establecerApellidoEstudiante(ape: Cadena)
+        a.  apellidosEstudiante = ape
+        b.  Fin Método establecerApellidoEstudiante 
+    
+    4.  Método establecerIdentificacionEstudiante(iden: Cadena)
+        a.  identificacionEstudiante = iden
+        b.  Fin Método establecerIdentificacionEstudiante 
+    
+    5.  Método establecerValorCredito(valor: Real)
+        a.  valorCredito = valor
+        b.  Fin Método establecerValorCreditor
+
+    6.  Método establecerNumeroCreditos(numero: Real)
+        a.  numeroCreditos = numero
+        b.  Fin Método establecerNumeroCreditos
+    
+    7.  Método calcularCostoMatricula()
+        a.  costoMatricula = numeroCreditos * valorCredito
+        b.  Fin Método calcularCostoMatricula
+
+    8.  Método obtenernombresEstudiante() : Cadena
+        a.  return nombresEstudiante  
+        b.  Fin Método obtenernombresEstudiante 
+ 
+    9.  Método obtenerApellidoEstudiante() : Cadena
+        a.  return apellidosEstudiante 
+        b.  Fin Método obtenerApellidoEstudiante
+
+    10. Método obtenerIdentificacionEstudiante() : Cadena
+        a.  return identificacionEstudiante 
+        b.  Fin Método obtenerIdentificacionEstudiante
+
+    11. Método obtenerNumeroCreditos() : Entero
+        a.  return numeroCreditos 
+        b.  Fin Método obtenerNumeroCreditos
+
+    12. Método costoMatricula() : Real
+        a.  return costoMatricula
+        b.  Fin Método costoMatricula 
+     
+  Fin Clase Estudiante 
+
+  Clase EjecutaEstudiante
+    1.  Método principal()
+        a.  Declarar Variables
+            nombresEst: Cadena 
+            apellidosEst: Cadena 
+            identificacionEst: Cadena 
+            valorCred: Real
+            numeroCred: Entero
+        
+        b.  Declarar,crear e iniciar objeto
+            Estudiante estudiante = new Estudiante()
+
+        c.  Solicitar nombre de estudiante,
+                      apellido de estudiante
+                      identificación de estudiante
+                      número de créditos
+                      valor de cada crédito
+        
+        d.  Leer  nombresEst,
+                  apellidosEst,
+                  identificacionEst,
+                  numeroCredito,
+                  valorCredito
+
+        e.  Establecer  estudiante.establecerNombresEstudiante(nombresEst),
+                        estudiante.establecerApellidoEstudiante(apellidosEst),
+                        estudiante.establecerIdentificacionEstudiante(identificacionEst),
+                        estudiante.establecerNumeroCredito(numeroCredito),
+                        estudiante.establecerValorCredito(valorCredito)
+
+        f.  Calcular  estudiante.calcularCostoMatricula()
+
+        g.  Imprimir  estudiante.obtenernombresEstudiante(),
+                      estudiante.obtenerApellidoEstudiante(),
+                      estudiante.obtenerIdentificacionEstudiante()
+                      estudiante.obtenerCostoMatricula()
+
+        h.  Fin Método principal
+    
+  Fin Clase EjecutaEstudiante  
+Fin
