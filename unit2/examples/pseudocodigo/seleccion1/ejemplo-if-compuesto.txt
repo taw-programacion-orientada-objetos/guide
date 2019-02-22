@@ -1,0 +1,114 @@
+
+if expresión-lógica then
+      Conjunto de instrucciones a ejecutar para una expresión-lógica verdadera
+else
+      Conjunto de instrucciones a ejecutar si la expresión lógica falsa
+endif
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+"""
+    • El costo de la pensión del estudiante se define así: si el estudiante está cursando 6 créditos o más recibe un descuento del 10% en el valor del crédito y el valor resultante se lo relaciona con el número de créditos; para el resto de estudiantes se debe cobrar una pensión en base al número de créditos y costo de cada crédito fijados inicialmente
+"""
+Algoritmo CALCULAR PENSIÓN DE UN ESTUDIANTE
+  Clase Estudiante 
+    1.  Declarar
+        nombresEstudiante: Cadena
+        apellidosEstudiante: Cadena
+        valorCredito: Real
+        numeroCreditos: Entero
+        costoPension: Real
+    
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombresEstudiante(nom: Cadena)
+        a.  nombresEstudiante = nom
+        b.  Fin Método establecerNombresEstudiante 
+  
+    3.  Método establecerApellidoEstudiante(ape: Cadena)
+        a.  apellidosEstudiante = ape
+        b.  Fin Método establecerApellidoEstudiante 
+    
+    4.  Método establecerValorCredito(valor: Real)
+        a.  valorCredito = valor
+        b.  Fin Método establecerValorCreditor
+
+    5.  Método establecerNumeroCreditos(numero: Real)
+        a.  numeroCreditos = numero
+        b.  Fin Método establecerNumeroCreditos
+    
+    6.  Método calcularCostoPension()
+        // el método permite la discriminación en base a lo solicitado
+        // en la problemática, para calcular el costo de la pensión de un estudiante
+        a.  if numeroCreditos < 6 then
+              costoPension = numeroCreditos * valorCredito
+        b.  else
+              nuevoValorCredito: Real
+              nuevoValorCredito = (valorCredito * 10)/100
+              nuevoValorCredito = valorCredito - nuevoValorCredito
+              costoPension = numeroCreditos * nuevoValorCredito 
+        c.  endif
+        d.  Fin Método calcularPension
+
+    //  Métodos obtener para los datos o atributos de la clase
+    7.  Método obtenerNombresEstudiante() : Cadena
+        a.  return nombresEstudiante  
+        b.  Fin Método obtenernombresEstudiante 
+ 
+    8.  Método obtenerApellidoEstudiante() : Cadena
+        a.  return apellidosEstudiante 
+        b.  Fin Método obtenerApellidoEstudiante
+
+    9. Método obtenerNumeroCreditos() : Entero
+        a.  return numeroCreditos 
+        b.  Fin Método obtenerNumeroCreditos
+
+    10.  Método obtenerValorCredito()
+        a.  return valorCredito  
+        b.  Fin Método obtenerValorCredito
+
+    11. Método obtenerCostoPension() : Real
+        a.  return costoMatricula
+        b.  Fin Método costoPension 
+     
+  Fin Clase Estudiante 
+
+  Clase EjecutaEstudiante
+    1.  Método principal()
+        a.  Declarar Variables
+            nombresEst: Cadena 
+            apellidosEst: Cadena 
+            valorCred: Real
+            numeroCred: Entero
+        
+        b.  // Declarar e iniciar el objeto Estudiante
+            Estudiante estudiante = new Estudiante()
+
+        c.  Solicitar nombre de estudiante,
+                      apellido de estudiante
+                      número de créditos
+                      valor de cada crédito
+        
+        d.  Leer  nombresEst,
+                  apellidosEst,
+                  numeroCredito,
+                  valorCredito
+
+        e.  // se hace uso de los métodos establecer para asignar valores
+            // a los datos (atributos) del objeto
+            Establecer  estudiante.establecerNombresEstudiante(nombresEst),
+                        estudiante.establecerApellidoEstudiante(apellidosEst),
+                        estudiante.establecerNumeroCredito(numeroCredito),
+                        estudiante.establecerValorCredito(valorCredito)
+
+        f.  // Se hace uso del método que permite calcular el costo de
+            // la pensión, se llama al método llamado calcularCostoPension
+            Calcular  estudiante.calcularCostoPension()
+
+        g.  Imprimir  estudiante.obtenernombresEstudiante(),
+                      estudiante.obtenerApellidoEstudiante(),
+                      estudiante.obtenerCostoPension()
+
+        h.  Fin Método principal
+    
+  Fin Clase EjecutaEstudiante  
+Fin 
