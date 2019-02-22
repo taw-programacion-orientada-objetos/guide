@@ -1,0 +1,46 @@
+Algoritmo Ejemplo constructor 
+
+  Clase Estudiante 
+    1.  Declarar
+        nombresEstudiante: Cadena
+        apellidosEstudiante: Cadena
+    
+    2.  Método Estudiante()
+        a.  nombresEstudiante = "Luis"
+        b.  apellidosEstudiante = "Alvarez"
+        c.  Fin Método Estudiante 
+  
+    3.  Método establecerNombresEstudiante(nom: Cadena)
+        a.  nombresEstudiante = nom
+        b.  Fin Método establecerNombresEstudiante 
+    
+    4.  Método establecerApellidoEstudiante(ape: Cadena)
+        a.  apellidosEstudiante = ape
+        b.  Fin Método establecerApellidoEstudiante 
+    
+    5.  Método obtenernombresEstudiante() : Cadena
+        a.  return nombresEstudiante  
+        b.  Fin Método obtenernombresEstudiante 
+ 
+    6.  Método obtenerApellidoEstudiante() : Cadena
+        a.  return apellidosEstudiante 
+        b.  Fin Método obtenerApellidoEstudiante
+
+  Fin Clase Estudiante 
+
+  Clase EjecutaEstudiante
+    1.  Método principal()
+        a.  Declarar Variables
+            nombresEst: Cadena 
+            apellidosEst: Cadena 
+        
+        b.  Declarar,crear e iniciar objeto
+            Estudiante estudiante = new Estudiante()
+
+        c.  Imprimir  estudiante.obtenernombresEstudiante(),
+                      estudiante.obtenerApellidoEstudiante(),
+
+        h.  Fin Método principal
+    
+  Fin Clase EjecutaEstudiante  
+Fin 
