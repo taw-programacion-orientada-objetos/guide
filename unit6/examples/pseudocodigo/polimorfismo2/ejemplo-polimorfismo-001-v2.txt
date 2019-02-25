@@ -1,0 +1,236 @@
+
+Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES 
+
+  Clase abstracta Estudiante 
+    1.  Declarar
+        // se declaran datos o atributos con visibilidad protegido,
+        // para que se puedan manipular por las clases derivadas
+        # nombresEstudiante: Cadena
+        # apellidosEstudiante: Cadena
+        # identificacionEstudiante: Cadena
+        # edadEstudiante: Entero
+        # matricula: Real 
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNombresEstudiante(nom: Cadena)
+        a.  nombresEstudiante = nom
+        b.  Fin Método establecerNombresEstudiante 
+  
+    3.  Método establecerApellidoEstudiante(ape: Cadena)
+        a.  apellidosEstudiante = ape
+        b.  Fin Método establecerApellidoEstudiante 
+    
+    4.  Método establecerIdentificacionEstudiante(iden: Cadena)
+        a.  identificacionEstudiante = iden
+        b.  Fin Método establecerIdentificacionEstudiante 
+
+    5.  Método establecerEdadEstudiante(ed: Edad)
+        a.  edadEstudiante = ed
+        b.  Fin Método establecerEdadEstudiante
+     
+    6.  Método abstracto calcularMatricula()
+        // método sin impĺementar, se deja la responsabilidad 
+        // a las clases derivadas
+
+    //  Métodos obtener para los datos o atributos de la clase
+    7.  Método obtenerNombresEstudiante() : Cadena
+        a.  return nombresEstudiante  
+        b.  Fin Método obtenernombresEstudiante 
+ 
+    8.  Método obtenerApellidoEstudiante() : Cadena
+        a.  return apellidosEstudiante 
+        b.  Fin Método obtenerApellidoEstudiante
+
+    9. Método obtenerIdentificacionEstudiante() : Cadena
+        a.  return identificacionEstudiante 
+        b.  Fin Método obtenerIdentificacionEstudiante
+
+    10.  Método obtenerEdadEstudiante(ed: Edad)
+        a.  return edadEstudiante
+        b.  Fin Método obtenerEdadEstudiante 
+
+    11. Método obtenerMatricula() : Real
+        a.  return matricula
+        b.  Fin Método obtenerMatricula
+   
+  Fin Clase Estudiante 
+  
+  Clase EstudiantePresencial hereda de Estudiante 
+    1.  Declarar
+        numeroCreditos: Entero 
+        costoCredito: Real 
+        matriculaPresencial: Real 
+    
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNumeroCreditos(numero: Real)
+        a.  numeroCreditos = numero
+        b.  Fin Método establecerNumeroCreditos
+    
+    3.  Método establecerCostoCredito(valor: Real)
+        a.  costoCredito = valor
+        b.  Fin Método establecerCostoCredito
+    
+    // Se implementa el método abstracto declarado en la superclase,
+    // bajo las condiciones propias de la subclase
+    4.  Método calcularMatricula()
+        a.  matricula = numeroCreditos * costoCredito
+        b.  Fin Método calcularMatricula
+
+    //  Métodos obtener para los datos o atributos de la clase
+    5. Método obtenerNumeroCreditos() : Entero
+        a.  return numeroCreditos 
+        b.  Fin Método obtenerNumeroCreditos
+
+    6. Método obtenerCostoCredito() : Entero
+        a.  return costoCredito
+        b.  Fin Método obtenerCostoCredito
+  
+  Fin Clase EstudiantePresencial 
+  
+  Clase EstudianteDistancia hereda de Estudiante 
+    1.  Declarar
+        numeroAsignaturas: Entero 
+        costoAsginatura: Real 
+        matriculaDistancia: Real 
+    
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerNumeroAsginaturas(numero: Real)
+        a.  numeroAsignaturas = numero
+        b.  Fin Método establecerNumeroAsginaturas
+    
+    3.  Método establecerCostoAsignatura(valor: Real)
+        a.  costoAsginatura = valor
+        b.  Fin Método establecerCostoAsignatura
+
+    // Se implementa el método abstracto declarado en la superclase,
+    // bajo las condiciones propias de la subclase
+    4.  Método calcularMatricula()
+        a.  matriculaDistancia = numeroAsignaturas * costoAsginatura
+        b.  Fin Método calcularMatricula
+
+    //  Métodos obtener para los datos o atributos de la clase
+    5. Método obtenerNumeroAsignaturas() : Entero
+        a.  return numeroAsignaturas 
+        b.  Fin Método obtenerNumeroAsignaturas
+
+    6. Método obtenerCostoAsignatura() : Entero
+        a.  return costoAsginatura
+        b.  Fin Método obtenerCostoAsignatura
+ 
+  Fin Clase EstudiantePresencial 
+
+
+  Clase EjecutaEstudiante
+    1.  Método principal()
+        // Se declaran variables
+        a.  Declarar Variables
+            nombresEst: Cadena 
+            apellidosEst: Cadena 
+            identificacionEst: Cadena 
+            edadEst: Entero
+            costoCred: Real
+            numeroCreds: Entero
+            costoAsig: Real
+            numeroAsigs: Entero
+            tipoEstudiante: Entero
+            contador: Entero
+            estudiantes: <<Arreglo>>[10] Estudiante
+        
+        b.  // Incio ciclo repetitivo que permite generar 10 objetos de tipo
+            // EstudiantePresencial y EstudianteDistancia 
+
+            contador = 0
+            // El ciclo repetitivo realizará 10 procesos, desde 0 a 9
+            while contador < 10  
+              // Se imprime mensaje en pantalla para solicitar
+              // el tipo de estudiante que se desea ingresar
+              1. Imprimir "Tipo de Estudiante a ingresar
+                  1. Estudiante Presencial
+                  2. Estudiante Distancia"
+              // se captura el valor ingresado por el usuario en 
+              // la variable tipoEstudiante
+              2. Leer tipoEstudiante 
+              // Solicitar el ingreso de valores para las variables
+              3. Solicitar nombresEst, apellidosEst, identificacionEst, edadEst
+              4. Leer nombresEst, apellidosEst, identificacionEst, edadEst
+              5. if tipoEstudiante == 1 then
+                a.  // Declarar,crear e iniciar objeto tipo EstudiantePresencial
+                    EstudiantePresencial estudianteP = new EstudiantePresencial()
+                b.  // Solicitar ingreso de valores para variables 
+                    // numero de creditos, costo de cada credito
+                    Solicitar numeroCreds, costoCred
+                c.  Leer numeroCreds, costoCred
+                  
+                d.  // se hace uso de los métodos establecer para asignar valores
+                    // a los datos (atributos) del objeto
+                    Establecer:  
+                          estudianteP.establecerNombresEstudiante(nombresEst),
+                          estudianteP.establecerApellidoEstudiante(apellidosEst),
+                          estudianteP.establecerIdentificacionEstudiante(identificacionEst),
+                          estudianteP.establecerEdadEstudiante(edadEst),
+                          estudianteP.establecerNumeroCreditos(numeroCredito),
+                          estudianteP.establecerCostoCredito(costoCredito)
+                e.  // Se agrega al arreglo estudiantes un objeto de tipo
+                    // EstudiantePresencial
+                    estudiantes[contador] = estudianteP 
+                
+              6. else
+                // Si el usuario ingresa un número diferente del valor 1 para 
+                // tipoEstudiante se procede a crear los procesos necesarios para 
+                // crear un objeto de tipo EstudianteDistancia
+                
+                a.  // Declarar,crear e iniciar objeto tipo EstudianteDistancia
+                    EstudiantePresencial estudianteD = new EstudianteDistancia()
+                b.  // Solicitar ingreso de valores para variables 
+                    // numero de asignaturas, costo de cada asignatura 
+                    Solicitar numeroAsigs, costoAsig 
+                c.  Leer numeroAsigs, costoAsig
+                  
+                d.  // se hace uso de los métodos establecer para asignar valores
+                    // a los datos (atributos) del objeto
+                    Establecer:  
+                          estudianteD.establecerNombresEstudiante(nombresEst),
+                          estudianteD.establecerApellidoEstudiante(apellidosEst),
+                          estudianteD.establecerIdentificacionEstudiante(identificacionEst),
+                          estudianteD.establecerEdadEstudiante(edadEst),
+                          estudianteD.establecerNumeroAsginaturas(numeroAsigs),
+                          estudianteD.establecerCostoAsignatura(costoAsig)
+
+                e.  // Se agrega al arreglo estudiantes un objeto de tipo
+                    // EstudianteDistancia
+                    estudiantes[contador] = estudianteP 
+              7. endif
+              8. contador = contador + 1
+        c.  endwhile
+
+        // Luego de crear y almancenar los objetos EstudiantePresencial
+        // y EstudianteDistancia, se procede a usar un ciclo repetitivo
+        // para recorrer el arreglo estudiantes, que permitirá:
+        // 1. Llamar al método abstracto calcularMatricula, de acuedo a las
+        // características propias de cada objeto.
+        // 2. Presentar en pantalla los valores que se necesite.
+        e. // inicio del ciclo repetitivo
+           for i=0; i<10; i++
+  
+            1.  estudiantes[i].obtenerMatricula() 
+                // en el punto 1, estudiantes[i] representa un objeto de tipo 
+                // EstudiantePresencial o EstudianteDistancia; en cualquiera de los
+                // dos casos, para dichos objetos se llama al método obtenerMatricula()
+                // de acuerdo al tipo de dato. Se recuerda que obtenerMatricula, es
+                // un método abstracto de la clase abstracta Estudiante y fue implementado
+                // de forma obligatoria en cada clase hija (EstudiantePresencial y
+                // EstudianteDistancia)
+            
+            2.  // se hace uso de los métodos obtener del objeto para presentar
+                // los valores que se necesite en pantalla
+                Imprimir:
+                  estudiantes[i].obtenerNombresEstudiante(),
+                  estudiantes[i].obtenerApellidoEstudiante(),
+                  estudiantes[i].obtenerIdentificacionEstudiante()
+                  estudiantes[i].obtenerEdadEstudiante()
+                  estudiantes[i].obtenerMatricula()
+        f.  endfor
+        d.  Fin Método principal
+    
+  Fin Clase EjecutaEstudiante  
+Fin 
