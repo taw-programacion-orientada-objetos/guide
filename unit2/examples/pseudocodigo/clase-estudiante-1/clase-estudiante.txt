@@ -25,7 +25,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE
         a.  valorCredito = valor
         b.  Fin Método establecerValorCreditor
 
-    6.  Método establecerNumeroCreditos(numero: Real)
+    6.  Método establecerNumeroCreditos(numero: Entero)
         a.  numeroCreditos = numero
         b.  Fin Método establecerNumeroCreditos
     
@@ -49,7 +49,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE
         a.  return numeroCreditos 
         b.  Fin Método obtenerNumeroCreditos
 
-    12. Método costoMatricula() : Real
+    12. Método obtenerCostoMatricula() : Real
         a.  return costoMatricula
         b.  Fin Método costoMatricula 
      
@@ -76,14 +76,14 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE
         d.  Leer  nombresEst,
                   apellidosEst,
                   identificacionEst,
-                  numeroCredito,
-                  valorCredito
+                  numeroCred,
+                  valorCred
 
         e.  Establecer  estudiante.establecerNombresEstudiante(nombresEst),
                         estudiante.establecerApellidoEstudiante(apellidosEst),
                         estudiante.establecerIdentificacionEstudiante(identificacionEst),
-                        estudiante.establecerNumeroCredito(numeroCredito),
-                        estudiante.establecerValorCredito(valorCredito)
+                        estudiante.establecerNumeroCreditos(numeroCred),
+                        estudiante.establecerValorCredito(valorCred)
 
         f.  Calcular  estudiante.calcularCostoMatricula()
 
