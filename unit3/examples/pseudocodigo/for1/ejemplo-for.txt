@@ -84,7 +84,7 @@ Algoritmo CALCULAR EL PROMEDIO DE CALIFICACIONES DE UN CONJUNTO DE ALUMNOS
         d.  // inicio del ciclo repetitivo
             // que itera hasta el valor ingresado en 
             // numero_alumnos
-            for j=1; j<numero_alumnos; j++
+            for j=1; j<=numero_alumnos; j++
 
               1.  // Declarar e iniciar el objeto Alumno 
                   // para todas las ocasiones que se recorra el ciclo
