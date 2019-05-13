@@ -23,7 +23,7 @@ Algoritmo CALCULAR LA PENSIÓN DE VARIOS ESTUDIANTE
         a.  apellidos= ape
         b.  Fin Método establecerApellido
     
-    4.  Método establecerNumeroHoras(horas: Real)
+    4.  Método establecerNumeroHoras(horas: Entero)
         a.  numeroHoras = horas
         b.  Fin Método establecerNumeroHoras
 
@@ -52,7 +52,7 @@ Algoritmo CALCULAR LA PENSIÓN DE VARIOS ESTUDIANTE
         a.  return numeroHoras
         b.  Fin Método obtenerNumeroHoras
 
-    10.  Método obtenerCostoHora()
+    10.  Método obtenerCostoHora() : Real
         a.  return costoHora  
         b.  Fin Método obtenerCostoHora
 
@@ -80,8 +80,8 @@ Algoritmo CALCULAR LA PENSIÓN DE VARIOS ESTUDIANTE
                   // para todas las ocasiones que se recorra el ciclo
                   Docente docente = new Docente()
 
-              2.  Solicitar nombre de estudiante,
-                            apellido de estudiante
+              2.  Solicitar nombre de docente,
+                            apellido de docente
                             número de Horas 
                             valor de cada Hora 
               
@@ -97,7 +97,7 @@ Algoritmo CALCULAR LA PENSIÓN DE VARIOS ESTUDIANTE
                               docente.establecerCostoHora(costoHr),
                               docente.establecerNumeroHoras(numeroHr)
 
-              5.  Calcular  estudiante.calcularSueldo()
+              5.  Calcular  docente.calcularSueldo()
 
               6.  Imprimir  "Los datos del docente ingresados son:",
                             docente.obtenerNombres(),
