@@ -32,7 +32,7 @@ Algoritmo CALCULAR PENSIÓN DE UN ESTUDIANTE
         a.  valorCredito = valor
         b.  Fin Método establecerValorCreditor
 
-    5.  Método establecerNumeroCreditos(numero: Real)
+    5.  Método establecerNumeroCreditos(numero: Entero)
         a.  numeroCreditos = numero
         b.  Fin Método establecerNumeroCreditos
     
@@ -62,12 +62,12 @@ Algoritmo CALCULAR PENSIÓN DE UN ESTUDIANTE
         a.  return numeroCreditos 
         b.  Fin Método obtenerNumeroCreditos
 
-    10.  Método obtenerValorCredito()
+    10.  Método obtenerValorCredito() : Real
         a.  return valorCredito  
         b.  Fin Método obtenerValorCredito
 
     11. Método obtenerCostoPension() : Real
-        a.  return costoMatricula
+        a.  return costoPension
         b.  Fin Método costoPension 
      
   Fin Clase Estudiante 
@@ -90,15 +90,15 @@ Algoritmo CALCULAR PENSIÓN DE UN ESTUDIANTE
         
         d.  Leer  nombresEst,
                   apellidosEst,
-                  numeroCredito,
-                  valorCredito
+                  numeroCred,
+                  valorCred
 
         e.  // se hace uso de los métodos establecer para asignar valores
             // a los datos (atributos) del objeto
             Establecer  estudiante.establecerNombresEstudiante(nombresEst),
                         estudiante.establecerApellidoEstudiante(apellidosEst),
-                        estudiante.establecerNumeroCredito(numeroCredito),
-                        estudiante.establecerValorCredito(valorCredito)
+                        estudiante.establecerNumeroCreditos(numeroCred),
+                        estudiante.establecerValorCredito(valorCred)
 
         f.  // Se hace uso del método que permite calcular el costo de
             // la pensión, se llama al método llamado calcularCostoPension
