@@ -62,7 +62,7 @@ Algoritmo CALCULAR LA PENSIÓN DE VARIOS ESTUDIANTE
         b.  Fin Método obtenerValorCredito
 
     11. Método obtenerCostoPension() : Real
-        a.  return costoMatricula
+        a.  return costoPension
         b.  Fin Método costoPension 
      
   Fin Clase Estudiante 
@@ -96,15 +96,15 @@ Algoritmo CALCULAR LA PENSIÓN DE VARIOS ESTUDIANTE
                   // a los datos (atributos) del objeto
                   Establecer  estudiante.establecerNombresEstudiante(nombresEst),
                               estudiante.establecerApellidosEstudiante(apellidosEst),
-                              estudiante.establecerNumeroCredito(numeroCredito),
-                              estudiante.establecerValorCredito(valorCredito)
+                              estudiante.establecerNumeroCreditos(numeroCred),
+                              estudiante.establecerValorCredito(valorCred)
 
               5.  // Se hace uso del método que permite calcular el costo de
                   // la pensión, se llama al método llamado calcularCostoPension
                   Calcular  estudiante.calcularCostoPension()
 
               6.  Imprimir  "Los datos del estudiante ingresados son:",
-                            estudiante.obtenernombresEstudiante(),
+                            estudiante.obtenerNombresEstudiante(),
                             estudiante.obtenerApellidosEstudiante(),
                             "Su pensión a pagar es:",
                             estudiante.obtenerCostoPension()
