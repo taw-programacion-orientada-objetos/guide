@@ -28,12 +28,9 @@ Algoritmo CALCULAR EL PROMEDIO DE CALIFICACIONES DE UN CONJUNTO DE ALUMNOS
         a.  calificacion2 = c2
         b.  Fin Método establecerCalificacion2
 
-    5.  Método establecerCalificacion3(c2: Real)
+    5.  Método establecerCalificacion3(c3: Real)
         a.  calificacion3 = c3
         b.  Fin Método establecerCalificacion3
-    6.  Método establecerNumeroHoras(horas: Real)
-        a.  numeroHoras = horas
-        b.  Fin Método establecerNumeroHoras
 
     7.  Método calcularPromedio()
         a.  Declarar variable locales
@@ -84,11 +81,11 @@ Algoritmo CALCULAR EL PROMEDIO DE CALIFICACIONES DE UN CONJUNTO DE ALUMNOS
         d.  // inicio del ciclo repetitivo
             // que itera hasta el valor ingresado en 
             // numero_alumnos
-            for j=1; j<numero_alumnos; j++
+            for j=1; j<=numero_alumnos; j++
 
               1.  // Declarar e iniciar el objeto Alumno 
                   // para todas las ocasiones que se recorra el ciclo
-                  Alumno alu = new Alumno()
+                  Alumno alumno = new Alumno()
 
               2.  Solicitar nombres de estudiante,
                             calificación 1, 
