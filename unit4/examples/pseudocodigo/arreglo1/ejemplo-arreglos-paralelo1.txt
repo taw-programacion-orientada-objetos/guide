@@ -6,11 +6,11 @@ Algoritmo MANEJO DE ARREGLOS CON DATOS PRIMITIVOS
         // se declaran datos o atributos con visibilidad protegido
         nombre: Cadena
         listaNombres: <<Arreglo>>[20] Cadena 
-        listaEdades: <<Arreglo>>[20] Real
+        listaEdades: <<Arreglo>>[20] Entero
 
 
     //  Métodos establecer y calcular para los datos o atributos de la clase
-    2.  Método establecerNombre(nom: Cadena)
+    2.  Método establecerNombreParalelo(nom: Cadena)
         a.  nombre= nom
         b.  Fin Método establecerNombre
   
@@ -24,14 +24,14 @@ Algoritmo MANEJO DE ARREGLOS CON DATOS PRIMITIVOS
     
     //  Métodos obtener para los datos o atributos de la clase
     5.  Método obtenerNombreParalelo() : Cadena
-        a.  return nombreParalelo
+        a.  return nombre
         b.  Fin Método obtenernombreParalelo
  
     6.  Método obtenerListaNombres() : <<Arreglo>> [] Cadena 
         a.  return listaNombres 
         b.  Fin Método obtenerListaNombres
     
-    7.  Método obtenerListaEdades() : <<Arreglo>> [] Real 
+    7.  Método obtenerListaEdades() : <<Arreglo>> [] Entero 
         a.  return listaEdades 
         b.  Fin Método obtenerListaEdades
 
@@ -43,24 +43,29 @@ Algoritmo MANEJO DE ARREGLOS CON DATOS PRIMITIVOS
         // Se declaran variables
         a.  Declarar Variables
             nombrePar: Cadena
-            nombreMat: Cadena
-            lista_notas: <<Arreglo>>[20] Real
+            listaDeEdades: <<Arreglo>>[20] Entero
+            listaDeNombres: <<Arreglo>>[20] Cadena
             i: Entero 
         
         b.  // Solicitar el ingreso de valores para nombre de paralelo
-            // y nombre de materia
-            Solicitar nombrePar, nombreMat
-            Leer nombrePar, nombreMat
+            Solicitar nombrePar
+            Leer nombrePar
         
-        c.  // Incio ciclo repetitivo para llenar las notas 
+        c.  // Incio ciclo repetitivo para llenar los nombre y edades
             // ingresadas por el teclado
             // Se usa un ciclo repetitivo for
             for i = 0; i<20; i++
-              // Solicitar el ingreso del valor de la nota y asignar
-              // a la posición del arreglo indicada por el valor
-              // que tenga i
-              1. Solicitar lista_notas[i]
-              2. Leer lista_notas[i]
+              // Solicitar el ingreso del valor del nombre de un alumno del 
+              // paralelo y asignar a la posición correspondiente al arreglo
+              // listaDeNombres
+              1. Solicitar listaDeNombres[i]
+              2. Leer listaDeNombres[i]
+              // Solicitar el ingreso del valor de la edad de un alumno del 
+              // paralelo y asignar a la posición correspondiente al arreglo
+              // listaDeEdades
+              3. Solicitar listaDeEdades[i]
+              4. Leer listaDeEdades[i]
+
         d.  endfor
         
         e.  // Declarar e iniciar un objeto tipo Paralelo
@@ -70,14 +75,17 @@ Algoritmo MANEJO DE ARREGLOS CON DATOS PRIMITIVOS
             // a los datos (atributos) del objeto paralelo
             Establecer:  
               paralelo.establecerNombreParalelo(nombrePar),
-              paralelo.establecerMateria(nombrePar),
-              paralelo.establecerNotas(lista_notas),
+              paralelo.establecerListaNombres(listaDeNombres),
+              paralelo.establecerListaEdades(listaDeEdades)
         
         
         g.  Imprimir "Los datos del paralelo son:",
                     "Nombre Paralelo: ", paralelo.obtenerNombreParalelo(),
-                    "Materia: ", paralelo.obtenerMateria(),
-
+            for i = 0; i<20; i++
+                Imprimir paralelo.obtenerListaNombres()[i]
+                Imprimir paralelo.obtenerListaEdades()[i]
+            endfor
+            
     Fin Método principal
   Fin Clase EjecutaParalelo  
 Fin 
