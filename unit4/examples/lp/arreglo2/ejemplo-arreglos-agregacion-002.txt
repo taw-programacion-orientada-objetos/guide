@@ -22,7 +22,7 @@ Algoritmo MANEJO DE OBJETOS CON ARREGLOS
         b.  Fin Método establecerPosicion
 
     //  Métodos obtener para los datos o atributos de la clase
-    5.  Método obtenerNombre() : Cadena
+    4.  Método obtenerNombre() : Cadena
         a.  return nombre
         b.  Fin Método obtenerNombre
 
@@ -30,7 +30,7 @@ Algoritmo MANEJO DE OBJETOS CON ARREGLOS
         a.  return edad
         b.  Fin Método obtenerEdad
  
-    5.  Método obtenerPosicion() : Cadena
+    6.  Método obtenerPosicion() : Cadena
         a.  return posicion
         b.  Fin Método obtenerPosicion
 
@@ -45,7 +45,7 @@ Algoritmo MANEJO DE OBJETOS CON ARREGLOS
 
     //  Métodos establecer y calcular para los datos o atributos de la clase
     2.  Método establecerNombreEquipo(nom: Cadena)
-        a.  nombre = nom
+        a.  nombreEquipo = nom
         b.  Fin Método establecerNombreEquipo
   
     3.  Método establecerSiglasEquipo(siglas: Cadena)
@@ -69,51 +69,72 @@ Algoritmo MANEJO DE OBJETOS CON ARREGLOS
         a.  return listaFutbolistas
         b.  Fin Método obtenerListaFutbolistas
     
-  Fin Clase Paralelo 
+  Fin Clase Equipo 
   
 
-  Clase EjecutaParalelo
+  Clase EjecutaEquipo
     1.  Método principal()
         // Se declaran variables
         a.  Declarar Variables
-            nombrePar: Cadena
-            nombreMat: Cadena
-            lista_notas: <<Arreglo>>[20] Real
+            nombreEq: Cadena
+            siglas: Cadena
+            lista_jugadores: <<Arreglo>>[20] Futbolista
+            nombreFutbolista: Cadena
+            edadFutbolista: Entero
+            posicionFutbolista: Cadena
             i: Entero 
         
-        b.  // Solicitar el ingreso de valores para nombre de paralelo
-            // y nombre de materia
-            Solicitar nombrePar, nombreMat
-            Leer nombrePar, nombreMat
+        b.  // Solicitar el ingreso de valores para nombre y siglas del equipo
+            Solicitar nombreEq, siglas
+            Leer nombreEq, siglas
         
-        c.  // Incio ciclo repetitivo para llenar las notas 
-            // ingresadas por el teclado
+        c.  // Incio ciclo repetitivo para llenar los datos de cada jugador 
+            // creando objetos de tipo Futbolista
             // Se usa un ciclo repetitivo for
             for i = 0; i<20; i++
-              // Solicitar el ingreso del valor de la nota y asignar
-              // a la posición del arreglo indicada por el valor
-              // que tenga i
-              1. Solicitar lista_notas[i]
-              2. Leer lista_notas[i]
-        d.  endfor
+              // Solicitar el ingreso de nombre, edad y posición de un 
+              // futbolista
+              Solicitar nombreFutbolista, edadFutbolista, posicionFutbolista
+              Leer nombreFutbolista, edadFutbolista, posicionFutbolista
+              // Se crea un objeto de tipo Futbolista
+              Futbolista f = new Futbolista()
+
+              // se usa los método establecer para asignar valores a los atributos
+              // del objeto de tipo Futbolista
+              f.establecerNombre(nombreFutbolista)
+              f.establecerEdad(edadFutbolista)
+              f.establecerPosicion(posicionFutbolista)
+              // El objeto de tipo Futbolista se agrega a la posición i 
+              // del arreglo
+              lista_jugadores[i] = f
+            endfor
         
-        e.  // Declarar e iniciar un objeto tipo Paralelo
-            Paralelo paralelo = new Paralelo()
+        d.  // Declarar e iniciar un objeto tipo Equipo
+            Equipo equipo = new Equipo()
          
-        f.  // se hace uso de los métodos establecer para asignar valores
-            // a los datos (atributos) del objeto paralelo
+        e.  // se hace uso de los métodos establecer para asignar valores
+            // a los datos (atributos) del objeto equipo
             Establecer:  
-              paralelo.establecerNombreParalelo(nombrePar),
-              paralelo.establecerMateria(nombrePar),
-              paralelo.establecerNotas(lista_notas),
+              equipo.establecerNombreEquipo(nombreEq),
+              equipo.establecerSiglasEquipo(siglas),
+              equipo.establecerListaFutbolista(lista_jugadores)
         
-        g.  // Se hace uso del método que permite calcular el promedio de notas
-            // Se llama al método del objeto paralelo, llamado calcularPromedio
-            Calcular: paralelo.calcularPromedio() 
-        h.  Imprimir "Los datos del paralelo son:",
-                    "Nombre Paralelo: ", paralelo.obtenerNombreParalelo(),
-                    "Materia: ", paralelo.obtenerMateria(),
-                    "Promedio de Notas es ", paralelo.obtenerPromedio(),
+        f.  // Se imprime los datos establecidos en el objeto de tipo Equipo
+            Imprimir "Los datos del equipo son:",
+                    "Nombre del Equipo: ", equipo.obtenerNombreEquipo(),
+                    "Siglas del Equipo: ", equipo.obtenerSiglasEquipo(),
+            // Se hace uso de un ciclo repetitivo para presentar los valores
+            // de los objetos de tipo Futbolista almacenados en el atributo
+            // listaFutbolistas del objeto de tipo Equipo
+
+            for i = 0; i<20; i++
+              // obtenerListaFutbolistas()[i], es tratado como un objeto
+              // de tipo Futbolista
+              Imprimir "Jugador con datos: ",
+                    "Nombre ", equipo.obtenerListaFutbolistas()[i].obtenerNombre(),
+                    "Edad ", equipo.obtenerListaFutbolistas()[i].obtenerEdad(),
+                    "Posición ", equipo.obtenerListaFutbolistas()[i].obtenerPosicion()
+            endfor
     Fin Método principal
-  Fin Clase EjecutaParalelo  
+  Fin Clase EjecutaEquipo
 Fin 
