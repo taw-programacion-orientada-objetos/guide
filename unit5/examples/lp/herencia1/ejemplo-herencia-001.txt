@@ -39,7 +39,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
         a.  return identificacionEstudiante 
         b.  Fin Método obtenerIdentificacionEstudiante
 
-    9.  Método obtenerEdadEstudiante(ed: Edad)
+    9.  Método obtenerEdadEstudiante() : Entero
         a.  return edadEstudiante
         b.  Fin Método obtenerEdadEstudiante 
    
@@ -52,7 +52,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
         matriculaPresencial: Real 
     
     //  Métodos establecer y calcular para los datos o atributos de la clase
-    2.  Método establecerNumeroCreditos(numero: Real)
+    2.  Método establecerNumeroCreditos(numero: Entero)
         a.  numeroCreditos = numero
         b.  Fin Método establecerNumeroCreditos
     
@@ -69,7 +69,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
         a.  return numeroCreditos 
         b.  Fin Método obtenerNumeroCreditos
 
-    6. Método obtenerCostoCredito() : Entero
+    6. Método obtenerCostoCredito() : Real
         a.  return costoCredito
         b.  Fin Método obtenerCostoCredito
 
@@ -86,7 +86,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
         matriculaDistancia: Real 
     
     //  Métodos establecer y calcular para los datos o atributos de la clase
-    2.  Método establecerNumeroAsginaturas(numero: Real)
+    2.  Método establecerNumeroAsginaturas(numero: Entero)
         a.  numeroAsignaturas = numero
         b.  Fin Método establecerNumeroAsginaturas
     
@@ -103,7 +103,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
         a.  return numeroAsignaturas 
         b.  Fin Método obtenerNumeroAsignaturas
 
-    6. Método obtenerCostoAsignatura() : Entero
+    6. Método obtenerCostoAsignatura() : Real
         a.  return costoAsginatura
         b.  Fin Método obtenerCostoAsignatura
 
@@ -157,8 +157,8 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
                         estudianteP.establecerApellidoEstudiante(apellidosEst),
                         estudianteP.establecerIdentificacionEstudiante(identificacionEst),
                         estudianteP.establecerEdadEstudiante(edadEst),
-                        estudianteP.establecerNumeroCreditos(numeroCredito),
-                        estudianteP.establecerCostoCredito(costoCredito)
+                        estudianteP.establecerNumeroCreditos(numeroCreds),
+                        estudianteP.establecerCostoCredito(costoCred)
 
               e.  // Luego que se ha ingresado los datos, se hace uso del método
                   // calcular Matricula Presencial para el objeto tipo
@@ -179,7 +179,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
               // crear un objeto de tipo EstudianteDistancia
               
               a.  // Declarar,crear e iniciar objeto tipo EstudianteDistancia
-                  EstudiantePresencial estudianteD = new EstudianteDistancia()
+                  EstudianteDistancia estudianteD = new EstudianteDistancia()
               b.  // Solicitar ingreso de valores para variables 
                   // numero de asignaturas, costo de cada asignatura 
                   Solicitar numeroAsigs, costoAsig 
@@ -203,11 +203,11 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
               f.  // se hace uso de los métodos obtener del objeto para presentar
                   // los valores que se necesite en pantalla
                   Imprimir:
-                      estudianteP.obtenerNombresEstudiante(),
-                      estudianteP.obtenerApellidoEstudiante(),
-                      estudianteP.obtenerIdentificacionEstudiante()
-                      estudianteP.obtenerEdadEstudiante()
-                      estudianteP.obtenerMatriculaDistancia()
+                      estudianteD.obtenerNombresEstudiante(),
+                      estudianteD.obtenerApellidoEstudiante(),
+                      estudianteD.obtenerIdentificacionEstudiante()
+                      estudianteD.obtenerEdadEstudiante()
+                      estudianteD.obtenerMatriculaDistancia()
 
             7. endif
             8. // Se pregunta si se desea ingresar más estudiante
