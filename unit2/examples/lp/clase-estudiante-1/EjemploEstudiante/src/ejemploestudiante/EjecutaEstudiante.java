@@ -59,7 +59,7 @@ public class EjecutaEstudiante {
         System.out.println("Nombre de estudiante " + estudiante.obtenernombresEstudiante());
         System.out.println("Apellido de estudiante " + estudiante.obtenerApellidoEstudiante());
         System.out.println("Identificación de estudiante " + 
-        estudiante.obtenerApellidoEstudiante());
+        estudiante.obtenerIdentificacionEstudiante());
         System.out.println("Costo matrícula de estudiante " + 
         estudiante.obtenerCostoMatricula());
         
