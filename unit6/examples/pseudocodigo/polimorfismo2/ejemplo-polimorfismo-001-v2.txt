@@ -180,7 +180,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
                 // crear un objeto de tipo EstudianteDistancia
                 
                 a.  // Declarar,crear e iniciar objeto tipo EstudianteDistancia
-                    EstudiantePresencial estudianteD = new EstudianteDistancia()
+                    EstudianteDistancia estudianteD = new EstudianteDistancia()
                 b.  // Solicitar ingreso de valores para variables 
                     // numero de asignaturas, costo de cada asignatura 
                     Solicitar numeroAsigs, costoAsig 
@@ -198,7 +198,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
 
                 e.  // Se agrega al arreglo estudiantes un objeto de tipo
                     // EstudianteDistancia
-                    estudiantes[contador] = estudianteP 
+                    estudiantes[contador] = estudianteD 
               7. endif
               8. contador = contador + 1
         c.  endwhile
@@ -212,10 +212,10 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
         e. // inicio del ciclo repetitivo
            for i=0; i<10; i++
   
-            1.  estudiantes[i].obtenerMatricula() 
+            1.  estudiantes[i].calcularMatricula() 
                 // en el punto 1, estudiantes[i] representa un objeto de tipo 
                 // EstudiantePresencial o EstudianteDistancia; en cualquiera de los
-                // dos casos, para dichos objetos se llama al método obtenerMatricula()
+                // dos casos, para dichos objetos se llama al método calcularMatricula()
                 // de acuerdo al tipo de dato. Se recuerda que obtenerMatricula, es
                 // un método abstracto de la clase abstracta Estudiante y fue implementado
                 // de forma obligatoria en cada clase hija (EstudiantePresencial y

@@ -188,7 +188,7 @@ Algoritmo  CALCULAR COSTO DE MATRICULA DE UN ESTUDIANTE DE DIVERSAS MODALIDADES
               // crear un objeto de tipo EstudianteDistancia
               
               a.  // Declarar,crear e iniciar objeto tipo EstudianteDistancia
-                  EstudiantePresencial estudianteD = new EstudianteDistancia()
+                  EstudianteDistancia estudianteD = new EstudianteDistancia()
               b.  // Solicitar ingreso de valores para variables 
                   // numero de asignaturas, costo de cada asignatura 
                   Solicitar numeroAsigs, costoAsig 
