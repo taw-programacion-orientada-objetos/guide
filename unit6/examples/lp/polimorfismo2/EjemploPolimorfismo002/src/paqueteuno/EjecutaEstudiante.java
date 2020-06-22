@@ -100,26 +100,6 @@ public class EjecutaEstudiante {
                     // EstudianteDistancia
                     estudiantes[contador] = estudianteD;
                     
-                    // Luego que se ha ingresado los datos, se hace uso del método
-                    // abtracto <calcularMatricula> para obtener 
-                    // el costo de la Matricula Distancia para el objeto tipo 
-                    // EstudianteDistancia
-                    estudianteD.calcularMatricula();
-
-                    // se hace uso de los métodos obtener del objeto para presentar
-                    // los valores que se necesite en pantalla
-                    System.out.printf("Datos Estudiante Distancia\n"
-                            + "Nombres: %s\n"
-                            + "Apellidos: %s\n"
-                            + "Identificación: %s\n"
-                            + "Edad: %d\n"
-                            + "Costo Matricula: %.2f\n\n",
-                            estudianteD.obtenerNombresEstudiante(),
-                            estudianteD.obtenerApellidoEstudiante(),
-                            estudianteD.obtenerIdentificacionEstudiante(),
-                            estudianteD.obtenerEdadEstudiante(),
-                            estudianteD.obtenerMatricula());
-                
             }
             
             contador = contador + 1;
